@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ForbiddenNameValidator } from '../validator/forbidden-name';
+import { ForbiddenNameValidator } from '../validators/forbidden-name';
 
 @Component({
   selector: 'app-base-formgroup',
