@@ -2,13 +2,14 @@
 <p>Formulario con validaciones</p>
 <form [formGroup]="profileForm">
   <label for="Name">Nombre:</label>
-  <input type="text" formControlName="firstName" name="Name" />
+  <input type="text" formControlName="firstName" name="Name" /><br />
   <label for="Age">Edad:</label>
-  <input type="text" formControlName="age" name="Age" />
+  <input type="text" formControlName="age" name="Age" /><br />
   <label for="Email">Correo:</label>
-  <input type="text" formControlName="email" name="Email" />
+  <input type="text" formControlName="email" name="Email" /><br />
 </form>
 <br />
 <pre><p>{{ profileForm.value | json }}</p></pre>
 <pre><p>Validador: {{ profileForm.valid }}</p></pre>
-<pre><p>{{ profileForm.get("firstName")?.errors | json }}</p></pre>
+<pre><p>Errores en Nombre: {{ profileForm.get("firstName")?.errors | json }}</p></pre>
+<pre><p>Errores en Email: {{ profileForm.get("email")?.errors | json }}</p></pre>
