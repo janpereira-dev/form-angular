@@ -1,1 +1,59 @@
-<p>exercise-formgroup works!</p>
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h1>Ejercicio 1 de FormGroup</h1>
+        <form [formGroup]="exerciseForm">
+          <div class="form-group">
+            <label for="Name">Nombre:</label>
+            <input
+              class="form-control"
+              type="text"
+              formControlName="firstName"
+              name="Name"
+            />
+            <label for="Email">Correo:</label>
+            <input
+              class="form-control"
+              type="text"
+              formControlName="email"
+              name="Email"
+            />
+            <label for="Birthdate">Fecha de Nacimiento:</label>
+            <input
+              class="form-control"
+              type="text"
+              formControlName="birthdate"
+              name="Birthdate"
+            />
+            <label for="Age">Edad:</label>
+            <input
+              class="form-control"
+              type="text"
+              formControlName="age"
+              name="Age"
+              readonly
+            />
+            <label for="ExpiryDateDni">Fecha de Expiracion DNI:</label>
+            <input
+              class="form-control"
+              type="text"
+              formControlName="expiryDateDni"
+              name="ExpiryDateDni"
+              readonly
+            />
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col pt-3">
+        <p>Validaciones</p>
+        <pre><p>{{ exerciseForm.value | json }}</p></pre>
+        <pre><p>Validador: {{ exerciseForm.valid }}</p></pre>
+        <pre><p>Errores en Nombre: {{ exerciseForm.get("firstName")?.errors | json }}</p></pre>
+        <pre><p>Errores en Email: {{ exerciseForm.get("email")?.errors | json }}</p></pre>
+      </div>
+    </div>
+  </div>
+</section>

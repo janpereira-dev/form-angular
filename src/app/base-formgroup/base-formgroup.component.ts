@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ForbiddenNameValidator } from '../validator/forbidden-name';
 
@@ -7,7 +7,7 @@ import { ForbiddenNameValidator } from '../validator/forbidden-name';
   templateUrl: './base-formgroup.component.html',
   styleUrls: ['./base-formgroup.component.scss']
 })
-export class BaseFormgroupComponent implements OnInit {
+export class BaseFormgroupComponent {
   name = 'Jan Pereira';
   age = 41;
   email = 'jan.pereira@gft.com';
@@ -21,10 +21,4 @@ export class BaseFormgroupComponent implements OnInit {
     age: [this.age],
     email: [this.email, { validators: [Validators.required, ForbiddenNameValidator(/jan/i)] }],
   });
-
-  ngOnInit(): void {
-    console.log('start');
-  }
-
-
 }

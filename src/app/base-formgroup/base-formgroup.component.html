@@ -1,15 +1,43 @@
-<h1>Form Group</h1>
-<p>Formulario con validaciones</p>
-<form [formGroup]="profileForm">
-  <label for="Name">Nombre:</label>
-  <input type="text" formControlName="firstName" name="Name" /><br />
-  <label for="Age">Edad:</label>
-  <input type="text" formControlName="age" name="Age" /><br />
-  <label for="Email">Correo:</label>
-  <input type="text" formControlName="email" name="Email" /><br />
-</form>
-<br />
-<pre><p>{{ profileForm.value | json }}</p></pre>
-<pre><p>Validador: {{ profileForm.valid }}</p></pre>
-<pre><p>Errores en Nombre: {{ profileForm.get("firstName")?.errors | json }}</p></pre>
-<pre><p>Errores en Email: {{ profileForm.get("email")?.errors | json }}</p></pre>
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h1>Form Group</h1>
+        <form [formGroup]="profileForm">
+          <div class="form-group">
+            <label for="Name">Nombre:</label>
+            <input
+              class="form-control"
+              type="text"
+              formControlName="firstName"
+              name="Name"
+            /><br />
+            <label for="Age">Edad:</label>
+            <input
+              class="form-control"
+              type="text"
+              formControlName="age"
+              name="Age"
+            /><br />
+            <label for="Email">Correo:</label>
+            <input
+              class="form-control"
+              type="text"
+              formControlName="email"
+              name="Email"
+            /><br />
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <p>Validaciones</p>
+        <pre><p>{{ profileForm.value | json }}</p></pre>
+        <pre><p>Validador: {{ profileForm.valid }}</p></pre>
+        <pre><p>Errores en Nombre: {{ profileForm.get("firstName")?.errors | json }}</p></pre>
+        <pre><p>Errores en Email: {{ profileForm.get("email")?.errors | json }}</p></pre>
+      </div>
+    </div>
+  </div>
+</section>
