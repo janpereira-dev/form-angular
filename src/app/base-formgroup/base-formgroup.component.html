@@ -1,0 +1,14 @@
+<h1>Form Group</h1>
+<p>Formulario con validaciones</p>
+<form [formGroup]="profileForm">
+  <label for="Name">Nombre:</label>
+  <input type="text" formControlName="firstName" name="Name" />
+  <label for="Age">Edad:</label>
+  <input type="text" formControlName="age" name="Age" />
+  <label for="Email">Correo:</label>
+  <input type="text" formControlName="email" name="Email" />
+</form>
+<br />
+<pre><p>{{ profileForm.value | json }}</p></pre>
+<pre><p>Validador: {{ profileForm.valid }}</p></pre>
+<pre><p>{{ profileForm.get("firstName")?.errors | json }}</p></pre>
